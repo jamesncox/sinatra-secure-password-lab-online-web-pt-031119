@@ -40,7 +40,7 @@ class ApplicationController < Sinatra::Base
     ##your code here
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
-      session[:]
+      session[:user_id]
     end 
   end
 
